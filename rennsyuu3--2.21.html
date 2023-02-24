@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>2ちゃんねる風掲示板</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="rennsyuu3--2.21.css">
+</head>
+
+<body>
+  <div id="header">
+    <h1>2ちゃんねる風掲示板</h1>
+  </div>
+  <div id="messages">
+    <ul id="message-list">
+      <!-- ここにメッセージを追加する -->
+    </ul>
+  </div>
+  <div id="form">
+    <form id="message-form">
+      <input type="text" id="message-input" placeholder="メッセージを入力してください">
+      <button type="submit">投稿</button>
+    </form>
+  </div>
+  <script>const SERVER_URL = "ws://localhost:8080";
+
+    // WebSocketオブジェクトを格納する変数
+    let socket;
+
+    // メッセージを表示するための要素を取得
+    const messageList = document.getElementById("message-list");
+
+    // フォームの要素を取得
+    const messageForm = document.getElementById("message-form");
+    const messageInput = document.getElementById("message-input");
+
+    // WebSocketサーバーに接続する
+    socket = new WebSocket(SERVER_URL);
+
+    // WebSocketサーバーに接続したという、WebSocketサーバーに接続したとき、接続が確立されたことを示すために、コンソールにログを出力します。
+    socket.addEventListener("open", event => {
+      console.log("WebSocketサーバーに接続しました");
+    });
+    //次に、WebSocketサーバーからメッセージを受信したときに実行する処理を定義します。この処理では、受信したメッセージを新しいli要素として追加し、画面に表示します。
+    socket.addEventListener("message", event => {
+      const message = event.data;
+      const li = document.createElement("li");
+      li.textContent = message;
+      messageList.appendChild(li);
+    });
+    //最後に、フォームが送信されたときに、入力されたメッセージをWebSocketサーバーに送信する処理を定義します。この処理では、WebSocketオブジェクトのsendメソッドを呼び出し、メッセージを送信します。
+
+    messageForm.addEventListener("submit", event => {
+      event.preventDefault();
+      const message = messageInput.value;
+      socket.send(message);
+      messageInput.value = "";
+    });//以上で、簡単なチャット機能を持つウェブサイトを構築するためのコードが完成します。WebSocketサーバーには、Node.jsなどのサーバーサイドのプログラミング言語を使用して実装する必要があります。
+  </script>
+</body>
+
+</html>

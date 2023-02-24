@@ -1,0 +1,130 @@
+body {
+  font-family: "Avenir Next";
+}
+
+li {
+  float: none;
+}
+
+
+.header {
+  background-color: #f7f2b4;
+  height: 90px;
+}
+
+.header-logo {
+  font-size: 36px;
+  float: left;
+  padding: 20px 40px;
+}
+
+
+
+
+
+
+/*  他にpadding-bottom、padding-left、padding-rightなどがあります。*/
+/*指定したい値が方向ごとに異なる場合、個別で指定する方法もありますが、まとめて書くことも可能です。
+値を4つ、スペース区切りで指定した場合、「上」「右」「下」「左」の順で適用されます。
+値を2つ指定した場合、「上下」「左右」の順に適用されます。*/
+
+.header-list li {
+
+  list-style: none;
+  float: left;
+  padding: 33px 20px;
+}
+
+
+.main {
+  padding: 100px 80px;
+}
+
+.copy-container h1 {
+  font-size: 140px;
+}
+
+v .copy-container h2 {
+  font-size: 60px;
+}
+
+
+
+.copy-container span {
+  color: #ff4a4a;
+}
+
+/*要素にボーダー（枠線）をつけるには、borderプロパティを用います。図のように、枠線の太さ、種類、色を指定して使用します。
+上下左右すべてに線を付けたい場合はborderとし、特定の場所にのみ付けたい場合は「border-bottom」のように、「border-方向」とします。
+他にborder-top、border-left、border-rightなどがあります。*/
+
+.section-title {
+  border-bottom: 2px solid #dee7ec;
+  font-size: 28px;
+  padding-bottom: 15px;
+  margin-bottom: 50px;
+}
+
+.contents {
+  height: 500px;
+  margin-top: 100px;
+}
+
+.contents-item {
+
+  float: left;
+  margin-right: 40px;
+
+}
+
+.contents-item p {
+  font-size: 24px;
+  margin-top: 30px;
+}
+
+.contact-form {
+  padding-top: 100px;
+}
+
+input textarea {
+  width: 400px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 20px;
+  font-size: 18px;
+  border: 1px solid #dee7ec;
+
+}
+
+
+.contact-submit {
+  background-color: #dee7ec;
+  color: #889eab;
+}
+
+
+.footer {
+  background-color: #2f5167;
+
+
+  color: #fff;
+
+
+  height: 120px;
+
+  padding: 40px;
+
+}
+
+.footer-logo {
+  font-size: 32px;
+  float: left;
+}
+
+.footer-list {
+  float: right;
+}
+
+.footer-list li {
+  padding-bottom: 20px;
+}

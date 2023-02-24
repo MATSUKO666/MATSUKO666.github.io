@@ -1,0 +1,59 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+#header {
+  background-color: #ff6600;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+#messages {
+  padding: 10px;
+}
+
+#message-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#message-list li {
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+#form {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
+}
+
+#message-input {
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 16px;
+  resize: none;
+}
+
+button[type="submit"] {
+  background-color: #ff6600;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+button[type="submit"]:hover {
+  background-color: #ff8533;
+}
